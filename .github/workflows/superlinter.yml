@@ -22,11 +22,11 @@ jobs:
         env:
             GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         run: |
-          git config --global user.name "Anurag8484"
-          git config --global user.email "anuragpoonia.ap@gmail.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "Automated commit from GitHub Actions"
-          git push https://${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
+          git push
 # name: Super-Linter
 
 # on:
