@@ -28,7 +28,6 @@ jobs:
           git commit -m "Automated commit from GitHub Actions"
           git push
 # name: Super-Linter
-
 # on:
 #   push:
 #   schedule:
