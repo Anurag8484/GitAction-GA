@@ -1,6 +1,9 @@
 name: Super-Linter
 
-on: push
+on:
+  push:
+  schedule:
+    - cron: "0 0 * * *"  # Runs at 00:00 (midnight) UTC every day
 
 jobs:
   test:
@@ -12,9 +15,13 @@ jobs:
         uses: actions/checkout@v2  # Checkout the repository code
 
       - name: 23f1002560@ds.study.iitm.ac.in
-        run: echo "Hello, world!"  # A simple echo statement
+        run: |
+          echo "Hello, from email!" > hello.txt  # Example change
 
-
-
-
- 
+      - name: Commit changes
+        run: |
+          git config --global user.name "Anurag8484"
+          git config --global user.email "23f1002560@ds.study.iitm.ac.in"
+          git add .
+          git commit -m "Automated commit from GitHub Actions"
+          git push
